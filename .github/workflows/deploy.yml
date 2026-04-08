@@ -27,10 +27,14 @@ jobs:
           registry-url: https://registry.npmjs.org/
           always-auth: false
 
-      - name: Install dependencies
+      - name: Remove GitHub token from npm environment
         run: |
+          unset NODE_AUTH_TOKEN
+          unset NPM_TOKEN
           rm -f ~/.npmrc
-          npm ci
+
+      - name: Install dependencies
+        run: npm ci
 
       - name: Build static site
         run: npm run build:static

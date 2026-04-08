@@ -1,0 +1,65 @@
+import {useEffect, useState} from "react";
+import {Box, Grid, Skeleton} from "@mui/material";
+import DetailsModal from "./details-modal";
+import {typesMap} from "../app/db-client";
+
+export default function PokeBox({pokemon}) {
+    const [open, setOpen] = useState(false);
+    const [loading, setLoading] = useState(true);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+
+    const backgroundColor = pokemon?.hasShiny ? "lightgreen" : "#fff";
+
+    useEffect(() => {
+        pokemon && setLoading(false);
+    }, [pokemon]);
+
+    return (
+        <>
+        <Box onClick={handleOpen}
+            sx={{
+                 border: '1px solid black',
+                 width: '150px',
+                 height: '150px',
+                 backgroundColor: backgroundColor,
+                 cursor: "pointer"
+             }}
+        >
+            {
+                loading ?
+                    <Skeleton variant="rectangular" width={150} height={150} /> :
+                    <>
+                        <Grid justifyContent="center" textAlign="center">
+                            {String(pokemon?.dexNo).padStart(3, "0")}
+                        </Grid>
+                        <Grid justifyContent="center" textAlign="center">
+                            {pokemon?.name}
+                        </Grid>
+                        {
+                            pokemon?.type2 ?
+                                <Grid display="flex" justifyContent="center">
+                                    <Box width="60px" display="flex" justifyContent="center" alignItems="center" gap="4px">
+                                        <img src={typesMap[pokemon?.type1]} />
+                                        <img src={typesMap[pokemon?.type2]} />
+                                    </Box>
+                                </Grid> :
+                                <Grid display="flex" justifyContent="center">
+                                    <Box width="60px">
+                                        <img src={typesMap[pokemon?.type1]} />
+                                    </Box>
+                                </Grid>
+                        }
+                        <Grid justifyContent="center" display="flex">
+                            <Box height="75px" width="75px" >
+                                <img src={pokemon?.sprite} height="100%" width="100%" />
+                            </Box>
+                        </Grid>
+                    </>
+            }
+
+        </Box>
+        <DetailsModal open={open} onClose={handleClose} pokemon={pokemon} />
+        </>
+    )
+}

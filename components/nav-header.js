@@ -1,4 +1,5 @@
-import {Grid, Link} from "@mui/material";
+import {Grid} from "@mui/material";
+import Link from "next/link";
 
 export default function NavHeader() {
     return(

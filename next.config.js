@@ -8,7 +8,7 @@ const nextConfig = {
     images: {
         unoptimized: true,
     },
-    basePath: isProd ? '/shiny-tracker/' : '',
+    basePath: isProd ? '/shiny-tracker' : '',
     assetPrefix: isProd ? '/shiny-tracker/' : '',
 };
 

@@ -14,7 +14,6 @@ export default function GenerationLayout({ region }) {
 
         async function load() {
             const data = region === "regional-variants" ? await getAllRegionalForms() : await getAllPokemonByRegion(region);
-            // console.log(JSON.stringify(data));
             if (isMounted && data) setData(data || null);
         }
 

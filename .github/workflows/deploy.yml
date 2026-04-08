@@ -26,12 +26,14 @@ jobs:
           node-version: 22
           registry-url: https://registry.npmjs.org/
           always-auth: false
+          token: ""
 
       - name: Remove GitHub token from npm environment
         run: |
+          rm -f ~/.npmrc
+          rm -f /home/runner/work/_temp/.npmrc || true
           unset NODE_AUTH_TOKEN
           unset NPM_TOKEN
-          rm -f ~/.npmrc
 
       - name: Install dependencies
         run: npm ci

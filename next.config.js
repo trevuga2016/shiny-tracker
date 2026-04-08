@@ -9,7 +9,7 @@ const nextConfig = {
         unoptimized: true,
     },
     basePath: isProd ? '/shiny-tracker' : '',
-    assetPrefix: isProd ? '/shiny-tracker' : '',
+    assetPrefix: isProd ? '/shiny-tracker/' : '',
 };
 
 module.exports = nextConfig;

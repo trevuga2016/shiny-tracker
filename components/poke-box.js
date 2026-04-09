@@ -22,10 +22,14 @@ export default function PokeBox({pokemon}) {
                  border: '1px solid black',
                  width: {
                      xs: '100px',
+                     sm: '125px',
+                     md: '125px',
                      lg: '150px',
                  },
                  height: {
                      xs: '100px',
+                     sm: '125px',
+                     md: '125px',
                      lg: '150px',
                  },
                  backgroundColor: backgroundColor,
@@ -39,6 +43,8 @@ export default function PokeBox({pokemon}) {
                         <Grid justifyContent="center" textAlign="center" sx={{
                             fontSize: {
                                 xs: "14px",
+                                sm: "14px",
+                                md: "14px",
                                 lg: "16px"
                             }
                         }}>
@@ -47,10 +53,15 @@ export default function PokeBox({pokemon}) {
                         <Grid justifyContent="center" textAlign="center" sx={{
                             fontSize: {
                                 xs: "14px",
+                                sm: "14px",
+                                md: "14px",
                                 lg: "16px"
                             },
                             marginTop: {
-                                xs: "-5px"
+                                xs: "-5px",
+                                sm: "-5px",
+                                md: "0px",
+                                lg: "0px"
                             }
                         }}>
                             {pokemon?.name}
@@ -60,22 +71,26 @@ export default function PokeBox({pokemon}) {
                                 <Grid display="flex" justifyContent="center">
                                     <Box width="40px" display="flex" justifyContent="center" alignItems="center" gap="4px" sx={{
                                         width: {
-                                            xs: "40px",
+                                            xs: "45px",
+                                            sm: "55px",
+                                            md: "55px",
                                             lg: "60px"
                                         }
                                     }}>
-                                        <img src={typesMap[pokemon?.type1]} />
-                                        <img src={typesMap[pokemon?.type2]} />
+                                        <img loading="lazy" src={typesMap[pokemon?.type1]} />
+                                        <img loading="lazy" src={typesMap[pokemon?.type2]} />
                                     </Box>
                                 </Grid> :
                                 <Grid display="flex" justifyContent="center">
                                     <Box sx={{
                                         width: {
-                                            xs: "40px",
+                                            xs: "45px",
+                                            sm: "55px",
+                                            md: "55px",
                                             lg: "60px"
                                         }
                                     }}>
-                                        <img src={typesMap[pokemon?.type1]} />
+                                        <img loading="lazy" src={typesMap[pokemon?.type1]} />
                                     </Box>
                                 </Grid>
                         }
@@ -83,14 +98,18 @@ export default function PokeBox({pokemon}) {
                             <Box sx={{
                                 height: {
                                     xs: "50px",
+                                    sm: "65px",
+                                    md: "65px",
                                     lg: "75px"
                                 },
                                 width: {
                                     xs: "50px",
+                                    sm: "65px",
+                                    md: "65px",
                                     lg: "75px"
                                 }
                             }}>
-                                <img src={pokemon?.sprite} height="100%" width="100%" />
+                                <img loading="lazy" src={pokemon?.sprite} height="100%" width="100%" />
                             </Box>
                         </Grid>
                     </>

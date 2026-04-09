@@ -25,7 +25,7 @@ export default function GenerationLayout({ region }) {
     }, []);
 
     return(
-        <Grid container spacing={2} justifyContent="center" pb={4}>
+        <Grid container spacing={2} justifyContent="center" pb={8}>
             {data?.map((pokemon, i) => (
                 <PokeBox pokemon={pokemon} key={i} />
             ))}

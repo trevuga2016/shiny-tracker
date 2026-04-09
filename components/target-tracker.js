@@ -28,12 +28,12 @@ export default function TargetTracker() {
     }, []);
 
     return(
-        <Grid container spacing={2} justifyContent="center" pb={4}>
-            <Grid justifyContent="center" textAlign="center">
-                <b>Current Target</b><PokeBox pokemon={current?.[0]} />
+        <Grid container justifyContent="center" pb={4}>
+            <Grid container direction="column" paddingX="10px" justifyContent="center" textAlign="center" alignItems="center">
+                <Grid fontWeight="bold">Current Target</Grid><PokeBox pokemon={current?.[0]} />
             </Grid>
-            <Grid justifyContent="center" textAlign="center">
-                <b>Recently Caught</b><PokeBox pokemon={recent?.[0]} />
+            <Grid container direction="column" paddingX="10px" justifyContent="center" textAlign="center" alignItems="center">
+                <Grid fontWeight="bold">Recently Caught</Grid><PokeBox pokemon={recent?.[0]} />
             </Grid>
         </Grid>
     )

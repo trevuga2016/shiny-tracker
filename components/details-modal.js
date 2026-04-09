@@ -7,7 +7,12 @@ export default function DetailsModal({open, onClose, pokemon}) {
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-        width: 400,
+        width: {
+            xs: '350px',
+            sm: '350px',
+            md: '400px',
+            lg: '400px'
+        },
         backgroundColor: '#fff',
         border: '2px solid black',
         boxShadow: 24,

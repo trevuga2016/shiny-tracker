@@ -52,7 +52,7 @@ export default function TotalsTable() {
     }, []);
 
     return(
-        !loading ? (<Grid container direction="column" alignItems="center">
+        !loading ? (<Grid container direction="column" alignItems="center" pb={4}>
             <Grid container direction="column" border="2px solid black" sx={{ width: {xs: '95%', sm: '75%', md: '50%', lg: '35%'} }}>
                 <Grid container justifyContent="center" sx={{ borderBottom: '2px solid black'}} fontWeight="bold">
                     <Grid size={3} textAlign="center" padding="5px" alignContent="center">
@@ -105,7 +105,7 @@ export default function TotalsTable() {
             </Grid>
         </Grid>) :
             (
-                <Grid container direction="column" alignItems="center">
+                <Grid container direction="column" alignItems="center" pb={4}>
                     <Grid container direction="column" border="2px solid black" sx={{ width: {xs: '95%', sm: '75%', md: '50%', lg: '35%'} }}>
                         <Grid container justifyContent="center" borderBottom="2px solid black" fontWeight="bold">
                             <Grid size={3} textAlign="center" padding="5px" alignContent="center">

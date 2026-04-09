@@ -19,16 +19,39 @@ export default function DetailsModal({open, onClose, pokemon}) {
         p: 4,
     };
 
-    let actualEncounters = "--"
+    let actualEncounters = "--";
+    let actualMethod = pokemon?.method;
     let gameFound = "--";
+
+    const listOfNAEncounterMethods = [
+        "Random Encounter",
+        "Gift",
+        "Fateful Encounter",
+        "Tera Raid",
+        "Mystery Gift",
+        "Wonder Trade",
+        "Ultra Wormhole Encounter",
+        "Fly Spawning",
+        "Fly Spawning (Hyperspace)",
+        "Mass Outbreak",
+        "Massive Mass Outbreak",
+        "Sandwich Encounters"
+    ]
 
     if (pokemon?.hasShiny && pokemon?.encounters > 0) {
         actualEncounters = String(pokemon?.encounters)
-    } else if (pokemon?.hasShiny && pokemon?.encounters == 0) {
-        actualEncounters = "Unknown"
+    } else if (pokemon?.hasShiny && pokemon?.encounters === 0) {
+        if (listOfNAEncounterMethods.includes(pokemon?.method)) {
+            actualEncounters = "n/a"
+        } else {
+            actualEncounters = "Unknown"
+        }
     }
 
     if (pokemon?.hasShiny && pokemon?.game_found) {
+        if (pokemon?.game_found === "GO") {
+            actualMethod = "n/a";
+        }
         gameFound = "Pokémon " + pokemon?.game_found
     } else if (pokemon?.hasShiny && !pokemon?.game_found) {
         gameFound = "n/a"
@@ -39,12 +62,14 @@ export default function DetailsModal({open, onClose, pokemon}) {
             <Box sx={style}>
                 <div style={{ justifyContent: "center", display: "flex", paddingBottom: "5px"}}>{ pokemon?.hasShiny && <img style={{ paddingRight: "4px"}}
                       src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/shiny-charm.png"/>}
-                    <Typography fontWeight="bold">{pokemon?.name}</Typography></div>
+                    <Typography fontWeight="bold">{String(pokemon?.dexNo).padStart(3, "0")}: {pokemon?.name}</Typography>
+                    { pokemon?.hasShiny && <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/shiny-charm.png"/>}
+                </div>
                 {
                     !pokemon?.isCurrentTarget ?
                         <>
                             <Typography><b>Game Found: </b>{gameFound}</Typography>
-                            <Typography><b>Method Used: </b>{pokemon?.hasShiny ? pokemon?.method : "--"}</Typography>
+                            <Typography><b>Method Used: </b>{pokemon?.hasShiny ? actualMethod : "--"}</Typography>
                             <Typography><b>Encounters: </b>{actualEncounters}</Typography>
                         </> :
                         <>

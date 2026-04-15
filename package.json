@@ -14,11 +14,11 @@
     "@mui/icons-material": "^7.3.9",
     "@mui/material": "^7.3.9",
     "@supabase/supabase-js": "^2.100.1",
+    "@tailwindcss/postcss": "^4",
     "next": "16.1.7",
     "pokeapi-js-wrapper": "^1.2.8",
     "react": "^19.2.3",
     "react-dom": "19.2.3",
-    "@tailwindcss/postcss": "^4",
     "tailwindcss": "^4"
   },
   "devDependencies": {

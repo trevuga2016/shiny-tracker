@@ -1,8 +1,8 @@
 "use client"
 
 import PokeBox from "./poke-box";
-import {Box, Grid} from "@mui/material";
-import {getAllPokemonByRegion, getAllRegionalForms, typesMap} from "../app/db-client";
+import {Grid} from "@mui/material";
+import {getAllPokemonByRegion, getAllRegionalForms} from "../app/db-client";
 import {useEffect, useState} from "react";
 
 export default function GenerationLayout({ region }) {

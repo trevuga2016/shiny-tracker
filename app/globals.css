@@ -20,6 +20,31 @@ body {
 
 a {
   color: #3b82f6; /* Tailwind blue-500 */
-  /*font-weight: 600;*/
   text-decoration: underline;
+}
+
+@layer components {
+  .text-container {
+    @apply py-4 w-[90%] sm:w-[75%] md:w-[70%] lg:w-[50%];
+  }
+
+  .MuiTypography-h5 {
+    @apply font-bold!;
+  }
+
+  .text-subheading {
+    @apply italic pb-1;
+  }
+
+  .text-block {
+    @apply py-2;
+  }
+
+  .MuiTypography-button {
+    @apply font-bold! py-2!;
+  }
+
+  .odds-table {
+    @apply justify-center w-full sm:w-full md:w-full lg:w-[75%];
+  }
 }

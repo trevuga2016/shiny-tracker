@@ -63,6 +63,23 @@ export async function getRecentTarget() {
     return data
 }
 
+export async function numberOfRegionalShiniesFound() {
+    const { data, error } = await supabase
+        .from('shiny_tracker')
+        .select('*')
+        .is('hasShiny', true)
+        .is('isRegionalForm', true);
+    return data.length
+}
+
+export async function totalNumberOfRegionalVariants() {
+    const { data, error } = await supabase
+        .from('shiny_tracker')
+        .select('*')
+        .is('isRegionalForm', true);
+    return data.length
+}
+
 async function getPokemonSpeciesByRegion(region) {
     const { data, error } = await supabase
         .from('shiny_tracker')

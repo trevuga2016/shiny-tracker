@@ -43,6 +43,9 @@ export default function NavHeader() {
             <Grid size={{ xs: 6, md: 2, lg: 1 }}>
                 <Link href="/regional-variants">Regional Variants</Link>
             </Grid>
+            <Grid size={{ xs: 6, md: 2, lg: 1 }}>
+                <Link href="/hunting-methods">The Methods</Link>
+            </Grid>
         </Grid>
     );
 }

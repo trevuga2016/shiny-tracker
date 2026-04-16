@@ -44,7 +44,15 @@ a {
     @apply font-bold! py-2!;
   }
 
+  .table-container {
+    @apply justify-center items-center py-4!;
+  }
+
   .odds-table {
-    @apply justify-center w-full sm:w-full md:w-full lg:w-[75%];
+    @apply justify-center w-full sm:w-full md:w-full lg:w-[75%] border-r-2! border-black;
+  }
+
+  .table-item {
+    @apply flex justify-center items-center text-center! border-b-2! border-l-2! border-black;
   }
 }

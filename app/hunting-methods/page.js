@@ -16,58 +16,58 @@ export default function HuntingMethods() {
                     <Typography className="text-block">Introduced in Gen V, obtaining the Shiny Charm increases the odds of encountering a shiny by doing <i>two</i> additional base shiny checks per encounter.</Typography>
                     <Typography className="text-block">For example: (1/4096 x 1/4096 x 1/4096) = 3/4096 = 1/1365.</Typography>
                     <Typography className="text-block">Pokémon Legends: Arceus does <i>three</i> additional base shiny checks per encounter.</Typography>
-                    <Grid container direction="column" justifyContent="center" paddingY={3} alignItems="center">
+                    <Grid container className="table-container">
                         <Grid container className="odds-table">
-                            <Grid size={4} textAlign="center" />
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" fontWeight="bold" borderTop="2px solid black">
+                            <Grid size={4} borderBottom="2px solid black"/>
+                            <Grid size={4} className="table-item" fontWeight="bold" borderTop="2px solid black">
                                 Base Odds
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" fontWeight="bold" borderRight="2px solid black" borderTop="2px solid black">
+                            <Grid size={4} className="table-item" fontWeight="bold" borderTop="2px solid black">
                                 Shiny Charm
                             </Grid>
-                            <Grid size={4} textAlign="right" fontWeight="bold" borderLeft="2px solid black" borderTop="2px solid black" paddingX={1}>
+                            <Grid size={4} className="table-item" fontWeight="bold">
                                 Generation II - IV
                             </Grid>
-                            <Grid size={4} textAlign="center"  borderLeft="2px solid black" borderTop="2px solid black">
+                            <Grid size={4} className="table-item">
                                 1 in 8192
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" borderTop="2px solid black" borderRight="2px solid black">
+                            <Grid size={4} className="table-item">
                                 n/a
                             </Grid>
-                            <Grid size={4} textAlign="right" paddingX={1} color="green" borderLeft="2px solid black">
+                            <Grid size={4} className="table-item" color="green">
                                 Black & White (Gen V)
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black">
+                            <Grid size={4} className="table-item">
                                 1 in 8192
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" borderRight="2px solid black">
+                            <Grid size={4} className="table-item">
                                 n/a
                             </Grid>
-                            <Grid size={4} textAlign="right" paddingX={1} color="green" borderLeft="2px solid black">
+                            <Grid size={4} className="table-item" color="green">
                                 Black 2 & White 2 (Gen V)
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black">
+                            <Grid size={4} className="table-item">
                                 1 in 8192
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" borderRight="2px solid black">
+                            <Grid size={4} className="table-item">
                                 1 in 2731
                             </Grid>
-                            <Grid size={4} textAlign="right" paddingX={1} fontWeight="bold" borderLeft="2px solid black">
+                            <Grid size={4} className="table-item" fontWeight="bold">
                                 Generation VI - IX
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black">
+                            <Grid size={4} className="table-item">
                                 1 in 4096
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" borderRight="2px solid black">
+                            <Grid size={4} className="table-item">
                                 1 in 1365
                             </Grid>
-                            <Grid size={4} textAlign="right" paddingX={1} color="green" borderLeft="2px solid black" borderBottom="2px solid black">
+                            <Grid size={4} className="table-item" color="green">
                                 Legends: Arceus (Gen VIII)
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" borderBottom="2px solid black">
+                            <Grid size={4} className="table-item">
                                 1 in 4096
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" borderBottom="2px solid black" borderRight="2px solid black">
+                            <Grid size={4} className="table-item">
                                 1 in 1024
                             </Grid>
                         </Grid>
@@ -80,92 +80,92 @@ export default function HuntingMethods() {
                     <Typography className="text-block">Build a catch combo to increases your shiny odds. Building a catch combo is simple: repeatedly catch the same Pokémon species multiple times in a row
                     until you spawn in a shiny. The shiny Pokémon will be visible in the overworld (and will also sparkle). Using a lure (any lure) will also increase your shiny odds.</Typography>
                     <Typography className="text-block">As your combo increases, your odds increase:</Typography>
-                    <Grid container direction="column" justifyContent="center" paddingY={3} alignItems="center">
-                        <Grid container className="odds-table">
-                            <Grid size={2.4} textAlign="center"/>
-                            <Grid size={2.4} textAlign="center" borderLeft="2px solid black" fontWeight="bold" borderTop="2px solid black">
+                    <Grid container className="table-container">
+                        <Grid container className="odds-table" columns={15}>
+                            <Grid size={3} borderBottom="2px solid black" />
+                            <Grid size={3} className="table-item" fontWeight="bold" borderTop="2px solid black">
                                 2 - 10
                             </Grid>
-                            <Grid size={2.4} textAlign="center" borderLeft="2px solid black" fontWeight="bold" borderTop="2px solid black">
+                            <Grid size={3} className="table-item" fontWeight="bold" borderTop="2px solid black">
                                 11 - 20
                             </Grid>
-                            <Grid size={2.4} textAlign="center" borderLeft="2px solid black" fontWeight="bold" borderTop="2px solid black">
+                            <Grid size={3} className="table-item" fontWeight="bold" borderTop="2px solid black">
                                 21 - 30
                             </Grid>
-                            <Grid size={2.4} textAlign="center" borderLeft="2px solid black" borderRight="2px solid black" fontWeight="bold" borderTop="2px solid black">
+                            <Grid size={3} className="table-item" fontWeight="bold" borderTop="2px solid black">
                                 31+
                             </Grid>
-                            <Grid size={2.4} textAlign="center" borderLeft="2px solid black" borderTop="2px solid black">
-                                No Lure or Shiny Charm
+                            <Grid size={3} className="table-item">
+                                No Lure, No Shiny Charm
                             </Grid>
-                            <Grid size={2.4} textAlign="center" borderLeft="2px solid black" borderTop="2px solid black">
+                            <Grid size={3} className="table-item">
                                 1 in 4096
                             </Grid>
-                            <Grid size={2.4} textAlign="center" borderLeft="2px solid black" borderTop="2px solid black">
+                            <Grid size={3} className="table-item">
                                 1 in 1024
                             </Grid>
-                            <Grid size={2.4} textAlign="center" borderLeft="2px solid black" borderTop="2px solid black">
+                            <Grid size={3} className="table-item">
                                 1 in 512
                             </Grid>
-                            <Grid size={2.4} textAlign="center" borderLeft="2px solid black" borderRight="2px solid black" borderTop="2px solid black">
+                            <Grid size={3} className="table-item">
                                 1 in 342
                             </Grid>
-                            <Grid size={2.4} textAlign="center" borderLeft="2px solid black" borderTop="2px solid black">
+                            <Grid size={3} className="table-item">
                                 Lure Only
                             </Grid>
-                            <Grid size={2.4} textAlign="center" borderLeft="2px solid black" borderTop="2px solid black">
+                            <Grid size={3} className="table-item">
                                 1 in 2048
                             </Grid>
-                            <Grid size={2.4} textAlign="center" borderLeft="2px solid black" borderTop="2px solid black">
+                            <Grid size={3} className="table-item">
                                 1 in 820
                             </Grid>
-                            <Grid size={2.4} textAlign="center" borderLeft="2px solid black" borderTop="2px solid black">
+                            <Grid size={3} className="table-item">
                                 1 in 456
                             </Grid>
-                            <Grid size={2.4} textAlign="center" borderLeft="2px solid black" borderRight="2px solid black" borderTop="2px solid black">
+                            <Grid size={3} className="table-item">
                                 1 in 316
                             </Grid>
-                            <Grid size={2.4} textAlign="center" borderLeft="2px solid black" borderTop="2px solid black">
+                            <Grid size={3} className="table-item">
                                 Shiny Charm Only
                             </Grid>
-                            <Grid size={2.4} textAlign="center" borderLeft="2px solid black" borderTop="2px solid black">
+                            <Grid size={3} className="table-item">
                                 1 in 1365
                             </Grid>
-                            <Grid size={2.4} textAlign="center" borderLeft="2px solid black" borderTop="2px solid black">
+                            <Grid size={3} className="table-item">
                                 1 in 683
                             </Grid>
-                            <Grid size={2.4} textAlign="center" borderLeft="2px solid black" borderTop="2px solid black">
+                            <Grid size={3} className="table-item">
                                 1 in 410
                             </Grid>
-                            <Grid size={2.4} textAlign="center" borderLeft="2px solid black" borderRight="2px solid black" borderTop="2px solid black">
+                            <Grid size={3} className="table-item">
                                 1 in 293
                             </Grid>
-                            <Grid size={2.4} textAlign="center" borderLeft="2px solid black" borderTop="2px solid black" borderBottom="2px solid black">
+                            <Grid size={3} className="table-item">
                                 Lure & Shiny Charm
                             </Grid>
-                            <Grid size={2.4} textAlign="center" borderLeft="2px solid black" borderTop="2px solid black" borderBottom="2px solid black">
+                            <Grid size={3} className="table-item">
                                 1 in 1024
                             </Grid>
-                            <Grid size={2.4} textAlign="center" borderLeft="2px solid black" borderTop="2px solid black" borderBottom="2px solid black">
+                            <Grid size={3} className="table-item">
                                 1 in 586
                             </Grid>
-                            <Grid size={2.4} textAlign="center" borderLeft="2px solid black" borderTop="2px solid black" borderBottom="2px solid black">
+                            <Grid size={3} className="table-item">
                                 1 in 373
                             </Grid>
-                            <Grid size={2.4} textAlign="center" borderLeft="2px solid black" borderRight="2px solid black" borderTop="2px solid black" borderBottom="2px solid black">
+                            <Grid size={3} className="table-item">
                                 1 in 274
                             </Grid>
                         </Grid>
                     </Grid>
-                    <Typography paddingY={1} variant="button" fontWeight="bold">Actions That Break Your Combo</Typography>
+                    <Typography variant="button">Actions That Break Your Combo</Typography>
                     <Typography className="text-block">&#10148;&nbsp;Catching a Pokémon of another species</Typography>
                     <Typography className="text-block">&#10148;&nbsp;The target Pokémon runs away</Typography>
                     <Typography className="text-block">&#10148;&nbsp;Turning off your game</Typography>
-                    <Typography paddingY={1} variant="button" fontWeight="bold">Actions That Do Not Break Your Combo</Typography>
+                    <Typography variant="button">Actions That Do Not Break Your Combo</Typography>
                     <Typography className="text-block">&#10148;&nbsp;Leaving the route</Typography>
                     <Typography className="text-block">&#10148;&nbsp;Running away from any encounter (target or not)</Typography>
                     <Typography className="text-block">&#10148;&nbsp;Leaving the route and catching the same species from another spawn location</Typography>
-                    <Typography paddingTop={2} className="text-block">The most common way to break a combo is by your target running away. However, there is a trick to try and prevent that from happening.
+                    <Typography className="text-block">The most common way to break a combo is by your target running away. However, there is a trick to try and prevent that from happening.
                     Before you begin your combo, open the PokéDex and find your target's entry. You can check your Pokémon's animations here, and the <b>second</b> animation is what's considered
                     the "run away" animation. Meaning, if you see your target perform that animation while you are trying to catch it, <i>it is getting ready to run away</i>. If you see that animation,
                     <i>run away immediately</i> from the encounter before your target does and this will preserve your chain.</Typography>
@@ -189,24 +189,24 @@ export default function HuntingMethods() {
                     <Typography variant="h5">DexNav Chaining</Typography>
                     <Typography className="text-subheading">Pokémon Omega Ruby and Alpha Sapphire</Typography>
                     <Typography className="text-block">Chaining encounters by using the DexNav increases your odds of finding a shiny.</Typography>
-                    <Typography paddingY={1} variant="button" fontWeight="bold">How To Keep The Chain Going</Typography>
+                    <Typography variant="button">How To Keep The Chain Going</Typography>
                     <Typography className="text-block">&#10148;&nbsp;Search for your target using the DexNav</Typography>
                     <Typography className="text-block">&#10148;&nbsp;Sneak up on your target without scaring it off</Typography>
                     <Typography className="text-block">&#10148;&nbsp;<b>Catch</b>&nbsp;or&nbsp;<b>defeat</b>&nbsp;your target</Typography>
-                    <Typography paddingTop={2} paddingBottom={1} variant="button" fontWeight="bold">Actions That Break The Chain</Typography>
+                    <Typography variant="button">Actions That Break The Chain</Typography>
                     <Typography className="text-block">&#10148;&nbsp;Running away from an encounter</Typography>
                     <Typography className="text-block">&#10148;&nbsp;Scaring off your target by not sneaking up quietly enough</Typography>
                     <Typography className="text-block">&#10148;&nbsp;Your target runs away before encountering it</Typography>
                     <Typography className="text-block">&#10148;&nbsp;Turning off your game</Typography>
                     <Typography className="text-block">&#10148;&nbsp;Leaving the route or location where you are chaining</Typography>
-                    <Typography paddingTop={2} paddingBottom={1} variant="button" fontWeight="bold">Actions That Break The Chain</Typography>
+                    <Typography variant="button">Actions That Break The Chain</Typography>
                     <Typography className="text-block">&#10148;&nbsp;Encountering a Pokémon different than your target</Typography>
                     <Typography className="text-block">&#10148;&nbsp;Pausing or saving your game</Typography>
-                    <Typography paddingTop={2}>Your shiny odds are then determined by a combination of your <b>search level</b> and what <b>chain</b> you are on. Every 50th encounter performs
+                    <Typography className="text-block">Your shiny odds are then determined by a combination of your <b>search level</b> and what <b>chain</b> you are on. Every 50th encounter performs
                     5 additional checks. Every 100th encounter performs 10 additional checks. Every 5th encounter performs 4 additional checks. Likewise, there is a
                     5% chance that an encounter (which is not already boosted by being the 5th, 50th, or 100th encounter) can be "boosted", which applies 4 additional checks.</Typography>
-                    <Typography paddingTop={1}>Additionally, as your search level increases, additional shiny checks are compounded to the checks listed above.</Typography>
-                    <Typography paddingTop={1}>The odds are very complicated and are already well documented. A full odds table can be found on&nbsp;<a src="https://bulbapedia.bulbagarden.net/wiki/DexNav#Hidden_Pok%C3%A9mon">Bulbapedia</a>&nbsp;
+                    <Typography className="text-block">Additionally, as your search level increases, additional shiny checks are compounded to the checks listed above.</Typography>
+                    <Typography pclassName="text-block">The odds are very complicated and are already well documented. A full odds table can be found on&nbsp;<a src="https://bulbapedia.bulbagarden.net/wiki/DexNav#Hidden_Pok%C3%A9mon">Bulbapedia</a>&nbsp;
                     and more information can be found from <a src="https://mrnbayoh.github.io/pkmn6gen/dexnav_shiny/">this article</a>.</Typography>
                 </Grid>
                 {/* Fateful Encounter */}
@@ -232,40 +232,40 @@ export default function HuntingMethods() {
                     <Typography className="text-subheading">Pokémon Legends: ZA</Typography>
                     <Typography className="text-block">The same as the normal fly spawning method, except in the Hyperspace DLC. You can do the same method in hyperspace by repeatedly flying to the Hyperspace entrance location.</Typography>
                     <Typography className="text-block">Also, <b>the odds can be increased depending on the donut used to enter Hyperspace.</b></Typography>
-                    <Grid container direction="column" justifyContent="center" paddingY={3} alignItems="center">
+                    <Grid container className="table-container">
                         <Grid container className="odds-table">
-                            <Grid size={4} textAlign="center" />
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" fontWeight="bold" borderTop="2px solid black">
+                            <Grid size={4} borderBottom="2px solid black"/>
+                            <Grid size={4} className="table-item" fontWeight="bold" borderTop="2px solid black">
                                 Base Odds
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" fontWeight="bold" borderRight="2px solid black" borderTop="2px solid black">
+                            <Grid size={4} className="table-item" fontWeight="bold" borderTop="2px solid black">
                                 Shiny Charm
                             </Grid>
-                            <Grid size={4} textAlign="right" borderLeft="2px solid black" borderTop="2px solid black" paddingX={1}>
+                            <Grid size={4} className="table-item">
                                 Sparkling Power Lv. 1
                             </Grid>
-                            <Grid size={4} textAlign="center"  borderLeft="2px solid black" borderTop="2px solid black">
+                            <Grid size={4} className="table-item">
                                 1 in 2048
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" borderTop="2px solid black" borderRight="2px solid black">
+                            <Grid size={4} className="table-item">
                                 1 in 820
                             </Grid>
-                            <Grid size={4} textAlign="right" paddingX={1} borderLeft="2px solid black">
+                            <Grid size={4} className="table-item">
                                 Sparkling Power Lv. 2
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black">
+                            <Grid size={4} className="table-item">
                                 1 in 1366
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" borderRight="2px solid black">
+                            <Grid size={4} className="table-item">
                                 1 in 683
                             </Grid>
-                            <Grid size={4} textAlign="right" paddingX={1} borderLeft="2px solid black" borderBottom="2px solid black">
+                            <Grid size={4} className="table-item">
                                 Sparkling Power Lv. 3
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" borderBottom="2px solid black">
+                            <Grid size={4} className="table-item">
                                 1 in 1024
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" borderRight="2px solid black" borderBottom="2px solid black">
+                            <Grid size={4} className="table-item">
                                 1 in 586
                             </Grid>
                         </Grid>
@@ -313,49 +313,49 @@ export default function HuntingMethods() {
                     <Typography className="text-block">After defeating 60 spawns in an outbreak, you can force despawn the Pokémon in the area by either leaving the spawn radius (centered around the player) or by
                     starting a picnic. This will bring in a new set of spawns, each with the maxed out shiny odds.</Typography>
                     <Typography className="text-block">Just be careful when defeating more than 60 spawns, since the mass outbreak can end if you defeat a certain number from the outbreak.</Typography>
-                    <Grid container direction="column" justifyContent="center" paddingY={3} alignItems="center">
-                        <Grid container justifyContent="center" width="100%">
-                            <Grid size={6} textAlign="center" />
-                            <Grid size={3} textAlign="center" borderLeft="2px solid black" fontWeight="bold" borderTop="2px solid black">
+                    <Grid container className="table-container">
+                        <Grid container className="odds-table">
+                            <Grid size={6} borderBottom="2px solid black"/>
+                            <Grid size={3} className="table-item" fontWeight="bold" borderTop="2px solid black">
                                 Base Odds
                             </Grid>
-                            <Grid size={3} textAlign="center" borderLeft="2px solid black" fontWeight="bold" borderRight="2px solid black" borderTop="2px solid black">
+                            <Grid size={3} className="table-item" fontWeight="bold" borderTop="2px solid black">
                                 Shiny Charm
                             </Grid>
-                            <Grid size={6} textAlign="center" borderLeft="2px solid black" borderTop="2px solid black" paddingX={1}>
+                            <Grid size={6} className="table-item">
                                 30 KOs, No Sandwich Power
                             </Grid>
-                            <Grid size={3} textAlign="center"  borderLeft="2px solid black" borderTop="2px solid black">
+                            <Grid size={3} className="table-item">
                                 1 in 2048
                             </Grid>
-                            <Grid size={3} textAlign="center" borderLeft="2px solid black" borderTop="2px solid black" borderRight="2px solid black">
+                            <Grid size={3} className="table-item">
                                 1 in 1024
                             </Grid>
-                            <Grid size={6} textAlign="center" paddingX={1} borderLeft="2px solid black">
+                            <Grid size={6} className="table-item">
                                 60 KOs, No Sandwich Power
                             </Grid>
-                            <Grid size={3} textAlign="center" borderLeft="2px solid black">
+                            <Grid size={3} className="table-item">
                                 1 in 1365
                             </Grid>
-                            <Grid size={3} textAlign="center" borderLeft="2px solid black" borderRight="2px solid black">
+                            <Grid size={3} className="table-item">
                                 1 in 819
                             </Grid>
-                            <Grid size={6} textAlign="center" paddingX={1} borderLeft="2px solid black">
+                            <Grid size={6} className="table-item">
                                 30 KOs, Sparkling Power Lv. 3 Sandwich
                             </Grid>
-                            <Grid size={3} textAlign="center" borderLeft="2px solid black">
+                            <Grid size={3} className="table-item">
                                 1 in 819
                             </Grid>
-                            <Grid size={3} textAlign="center" borderLeft="2px solid black" borderRight="2px solid black">
+                            <Grid size={3} className="table-item">
                                 1 in 585
                             </Grid>
-                            <Grid size={6} textAlign="center" paddingX={1} borderLeft="2px solid black" borderBottom="2px solid black">
+                            <Grid size={6} className="table-item">
                                 60 KOs, Sparkling Power Lv. 3 Sandwich
                             </Grid>
-                            <Grid size={3} textAlign="center" borderLeft="2px solid black" borderBottom="2px solid black">
+                            <Grid size={3} className="table-item">
                                 1 in 683
                             </Grid>
-                            <Grid size={3} textAlign="center" borderLeft="2px solid black" borderRight="2px solid black" borderBottom="2px solid black">
+                            <Grid size={3} className="table-item">
                                 1 in 512
                             </Grid>
                         </Grid>
@@ -368,31 +368,31 @@ export default function HuntingMethods() {
                     <Typography className="text-block">Mass outbreaks occur when selecting an area to go to from Jubilife Village. They are indicated by the Pokémon's picture in a specific area of the regional map. While these
                     have extremely high shiny odds, they usually do not last very long. These outbreaks typically spawn 10-15 Pokémon, including the evolutionary lines of the specified Pokémon outbreak. When returning to
                     Jubilife Village, there is a 20% chance of a new mass outbreak spawning. When leaving Jubilife Village, there is a 20% chance of a mass outbreak despawning.</Typography>
-                    <Grid container direction="column" justifyContent="center" paddingY={3} alignItems="center">
+                    <Grid container className="table-container">
                         <Grid container className="odds-table">
-                            <Grid size={4} textAlign="center" />
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" fontWeight="bold" borderTop="2px solid black">
+                            <Grid size={4} borderBottom="2px solid black"/>
+                            <Grid size={4} className="table-item" fontWeight="bold" borderTop="2px solid black">
                                 Base Odds
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" fontWeight="bold" borderRight="2px solid black" borderTop="2px solid black">
+                            <Grid size={4} className="table-item" fontWeight="bold" borderTop="2px solid black">
                                 Shiny Charm
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" borderTop="2px solid black" paddingX={1}>
-                                Species Research Lvl 10
+                            <Grid size={4} className="table-item">
+                                Species Research (Lvl. 10)
                             </Grid>
-                            <Grid size={4} textAlign="center"  borderLeft="2px solid black" borderTop="2px solid black">
+                            <Grid size={4} className="table-item">
                                 1 in 152
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" borderTop="2px solid black" borderRight="2px solid black">
+                            <Grid size={4} className="table-item">
                                 1 in 137
                             </Grid>
-                            <Grid size={4} textAlign="center" paddingX={1} borderLeft="2px solid black" borderBottom="2px solid black">
-                                Species Research Perfect
+                            <Grid size={4} className="table-item">
+                                Species Research (Perfect)
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" borderBottom="2px solid black">
+                            <Grid size={4} className="table-item">
                                 1 in 142
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" borderRight="2px solid black" borderBottom="2px solid black">
+                            <Grid size={4} className="table-item">
                                 1 in 128
                             </Grid>
                         </Grid>
@@ -409,31 +409,31 @@ export default function HuntingMethods() {
                     <Typography className="text-block">While the individual outbreaks themselves end after defeating or capturing every Pokémon from the "waves" in the outbreak, the Massive Mass Outbreak itself will last 7 - 11 minutes
                     total. A message will appear indicating how much time is left on the Massive Mass Outbreak.</Typography>
                     <Typography className="text-block">When returning to Jubilife Village, there is a 25% chance of a new Massive Mass Outbreak spawning. When leaving Jubilife Village, there is a 25% chance of a Massive Mass Outbreak despawning.</Typography>
-                    <Grid container direction="column" justifyContent="center" paddingY={3} alignItems="center">
+                    <Grid container className="table-container">
                         <Grid container className="odds-table">
-                            <Grid size={4} textAlign="center" />
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" fontWeight="bold" borderTop="2px solid black">
+                            <Grid size={4} borderBottom="2px solid black"/>
+                            <Grid size={4} className="table-item" fontWeight="bold" borderTop="2px solid black">
                                 Base Odds
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" fontWeight="bold" borderRight="2px solid black" borderTop="2px solid black">
+                            <Grid size={4} className="table-item" fontWeight="bold" borderTop="2px solid black">
                                 Shiny Charm
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" borderTop="2px solid black" paddingX={1}>
-                                Species Research Lvl 10
+                            <Grid size={4} className="table-item">
+                                Species Research (Lvl. 10)
                             </Grid>
-                            <Grid size={4} textAlign="center"  borderLeft="2px solid black" borderTop="2px solid black">
+                            <Grid size={4} className="table-item">
                                 1 in 293
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" borderTop="2px solid black" borderRight="2px solid black">
+                            <Grid size={4} className="table-item">
                                 1 in 256
                             </Grid>
-                            <Grid size={4} textAlign="center" paddingX={1} borderLeft="2px solid black" borderBottom="2px solid black">
-                                Species Research Perfect
+                            <Grid size={4} className="table-item">
+                                Species Research (Perfect)
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" borderBottom="2px solid black">
+                            <Grid size={4} className="table-item">
                                 1 in 241
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" borderRight="2px solid black" borderBottom="2px solid black">
+                            <Grid size={4} className="table-item">
                                 1 in 216
                             </Grid>
                         </Grid>
@@ -448,40 +448,40 @@ export default function HuntingMethods() {
                     <Typography className="text-block">Example: If I obtain a Japanese Ditto from Japan over GTS, I am able to breed it with any breedable English Pokémon, and this egg has a higher chance of a shiny offspring
                     than if I were to use an English Ditto. However, if I breed a Japanese Ditto with, let's say, a Japanese Typhlosion (even if I am geolocated in America), the Masuda Method
                     does not apply, and the odds of a shiny Cyndaquil hatching are still the base odds.</Typography>
-                    <Grid container direction="column" justifyContent="center" paddingY={3} alignItems="center">
+                    <Grid container className="table-container">
                         <Grid container className="odds-table">
-                            <Grid size={4} textAlign="center" />
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" fontWeight="bold" borderTop="2px solid black">
+                            <Grid size={4} borderBottom="2px solid black"/>
+                            <Grid size={4} className="table-item" fontWeight="bold" borderTop="2px solid black">
                                 Base Odds
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" fontWeight="bold" borderRight="2px solid black" borderTop="2px solid black">
+                            <Grid size={4} className="table-item" fontWeight="bold" borderTop="2px solid black">
                                 Shiny Charm
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" borderTop="2px solid black" paddingX={1}>
+                            <Grid size={4} className="table-item">
                                 Generation IV
                             </Grid>
-                            <Grid size={4} textAlign="center"  borderLeft="2px solid black" borderTop="2px solid black">
+                            <Grid size={4} className="table-item">
                                 1 in 1638
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" borderTop="2px solid black" borderRight="2px solid black">
+                            <Grid size={4} className="table-item">
                                 n/a
                             </Grid>
-                            <Grid size={4} textAlign="center" paddingX={1} borderLeft="2px solid black">
+                            <Grid size={4} className="table-item">
                                 Generation V
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black">
+                            <Grid size={4} className="table-item">
                                 1 in 1365
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" borderRight="2px solid black">
+                            <Grid size={4} className="table-item">
                                 1 in 1024
                             </Grid>
-                            <Grid size={4} textAlign="center" paddingX={1} borderLeft="2px solid black" borderBottom="2px solid black">
+                            <Grid size={4} className="table-item">
                                 Generation VI - IV
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" borderBottom="2px solid black">
+                            <Grid size={4} className="table-item">
                                 1 in 683
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" borderRight="2px solid black" borderBottom="2px solid black">
+                            <Grid size={4} className="table-item">
                                 1 in 512
                             </Grid>
                         </Grid>
@@ -548,22 +548,22 @@ export default function HuntingMethods() {
                     chaining is required, just simply respawn as many of the species you can to hopefully encounter a shiny.</Typography>
                     <Typography className="text-block">This <a src="https://edwardsimmons.github.io/pokemon-sv-isolated-encounters/">Isolated Encounter Optimization Tool</a> is what I use to find an area where
                     it's the most likely to spawn the species I am targeting.</Typography>
-                    <Grid container direction="column" justifyContent="center" paddingY={3} alignItems="center">
+                    <Grid container className="table-container">
                         <Grid container className="odds-table">
-                            <Grid size={4} textAlign="center" />
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" fontWeight="bold" borderTop="2px solid black">
+                            <Grid size={4} borderBottom="2px solid black"/>
+                            <Grid size={4} className="table-item" fontWeight="bold" borderTop="2px solid black">
                                 Base Odds
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" fontWeight="bold" borderRight="2px solid black" borderTop="2px solid black">
+                            <Grid size={4} className="table-item" fontWeight="bold" borderTop="2px solid black">
                                 Shiny Charm
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" borderTop="2px solid black" paddingX={1} borderBottom="2px solid black">
+                            <Grid size={4} className="table-item">
                                 Sparkling Power Lvl. 3
                             </Grid>
-                            <Grid size={4} textAlign="center"  borderLeft="2px solid black" borderTop="2px solid black" borderBottom="2px solid black">
+                            <Grid size={4} className="table-item">
                                 1 in 1024
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" borderTop="2px solid black" borderRight="2px solid black" borderBottom="2px solid black">
+                            <Grid size={4} className="table-item">
                                 1 in 683
                             </Grid>
                         </Grid>
@@ -589,18 +589,18 @@ export default function HuntingMethods() {
                     use Skill Swap to give our target the Harvest ability (allowing it to regenerate any consumed berry), and then using Bestow to give our held Leppa Berry to our target. What this does is
                     effectively give any wild Pokémon unlimited PP since the berry is automatically consumed when a wild Pokémon's move runs out of PP. The Harvest ability then regenerates the held Leppa Berry,
                     and the cycle continues. This is important to keep our SOS chain going.</Typography>
-                    <Typography variant="button" fontWeight="bold" paddingY={1}>The Harvest Exeggcute Setup</Typography>
+                    <Typography variant="button" >The Harvest Exeggcute Setup</Typography>
                     <Typography className="text-block">1) Catch an Exeggcute (not Exeggutor) with it's Hidden Ability, Harvest. This ability allows a Pokémon to regenerate a consumed berry. It may take some time to find one, but you
                     can catch them in the wild on Exeggutor Island.</Typography>
                     <Typography className="text-block">2) Level up your Exeggcute to level 50 so it will learn the move Bestow. This move passes a held item to a target that is not holding an item.
                     Make sure you DO NOT evolve your Exeggcute before level 50 or it won't be able to learn (or relearn) the move Bestow.</Typography>
                     <Typography className="text-block">3) Teach your Exeggcute the move Skill Swap. It can learn this move from the move tutor at the Battle Tree on Poni Island for 8BP.</Typography>
                     <Typography className="text-block">4) Your Exeggcute is now ready, you can evolve it if you'd like.</Typography>
-                    <Typography variant="button" fontWeight="bold" paddingY={1}>Leppa Berries - Lots of Them</Typography>
+                    <Typography variant="button">Leppa Berries - Lots of Them</Typography>
                     <Typography className="text-block">After you have access to Poké Pelago, you can essentially generate unlimited Leppa Berries. To do this, first upgrade Isle Abeens to its max.
                     This ensures you have plenty of beans for building and upgrading islands. Next, make sure to build and upgrade Isle Aplenny to its max. You can then essentially harvest Leppa Berries
                     here, and every 24 hours, this island will produce tons of Leppa Berries. You can increase the 24 hour wait period, but after a harvest or two, you should have hundreds of Leppa Berries.</Typography>
-                    <Typography variant="button" fontWeight="bold" paddingY={1}>SOS Chaining</Typography>
+                    <Typography variant="button">SOS Chaining</Typography>
                     <Typography className="text-block">To begin the hunt, it is important to bring three things to the battle:</Typography>
                     <Typography className="text-block">1) Your Harvest Exeggcute or Exeggutor holding a Leppa Berry</Typography>
                     <Typography className="text-block">2) A Pokémon with the move False Swipe</Typography>
@@ -615,49 +615,49 @@ export default function HuntingMethods() {
                     or you will lose the Harvest/Leppa Berry setup!</b> If your target sends out an SOS call, but nothing shows up, just simply use an Adrenaline Orb for your turn (it will not be consumed).</Typography>
                     <Typography className="text-block">As long as the battle continues, your SOS chain will be active. One small caveat, in <i>Sun and Moon ONLY</i>, after 255 encounters, the SOS chain automatically gets reset to 0.
                     This limitation is not in Ultra Sun and Ultra Moon.</Typography>
-                    <Grid container direction="column" justifyContent="center" paddingY={3} alignItems="center">
+                    <Grid container className="table-container">
                         <Grid container className="odds-table">
-                            <Grid size={4} textAlign="center" />
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" fontWeight="bold" borderTop="2px solid black">
+                            <Grid size={4} borderBottom="2px solid black"/>
+                            <Grid size={4} className="table-item" fontWeight="bold" borderTop="2px solid black">
                                 Base Odds
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" fontWeight="bold" borderRight="2px solid black" borderTop="2px solid black">
+                            <Grid size={4} className="table-item" fontWeight="bold" borderTop="2px solid black">
                                 Shiny Charm
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" borderTop="2px solid black" paddingX={1}>
+                            <Grid size={4} className="table-item">
                                 SOS Chain 5 - 10
                             </Grid>
-                            <Grid size={4} textAlign="center"  borderLeft="2px solid black" borderTop="2px solid black">
+                            <Grid size={4} className="table-item">
                                 1 in 2048
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" borderTop="2px solid black" borderRight="2px solid black">
+                            <Grid size={4} className="table-item">
                                 1 in 1024
                             </Grid>
-                            <Grid size={4} textAlign="center" paddingX={1} borderLeft="2px solid black">
+                            <Grid size={4} className="table-item">
                                 SOS Chain 11 - 20
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black">
+                            <Grid size={4} className="table-item">
                                 1 in 683
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" borderRight="2px solid black">
+                            <Grid size={4} className="table-item">
                                 1 in 512
                             </Grid>
-                            <Grid size={4} textAlign="center" paddingX={1} borderLeft="2px solid black">
+                            <Grid size={4} className="table-item">
                                 SOS Chain 21 - 30
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black">
+                            <Grid size={4} className="table-item">
                                 1 in 410
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" borderRight="2px solid black">
+                            <Grid size={4} className="table-item">
                                 1 in 341
                             </Grid>
-                            <Grid size={4} textAlign="center" paddingX={1} borderLeft="2px solid black" borderBottom="2px solid black">
+                            <Grid size={4} className="table-item">
                                 SOS Chain 31+
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" borderBottom="2px solid black">
+                            <Grid size={4} className="table-item">
                                 1 in 293
                             </Grid>
-                            <Grid size={4} textAlign="center" borderLeft="2px solid black" borderRight="2px solid black" borderBottom="2px solid black">
+                            <Grid size={4} className="table-item">
                                 1 in 256
                             </Grid>
                         </Grid>

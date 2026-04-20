@@ -1,4 +1,4 @@
-import { createClient } from '@supabase/supabase-js';
+import {createClient} from '@supabase/supabase-js';
 
 const supabase = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_DEFAULT_KEY
@@ -52,7 +52,7 @@ export async function getCurrentTarget() {
         .from('shiny_tracker')
         .select('*')
         .is('isCurrentTarget', true);
-    return data
+    return data[0];
 }
 
 export async function getRecentTarget() {
@@ -60,7 +60,7 @@ export async function getRecentTarget() {
         .from('shiny_tracker')
         .select('*')
         .is('isRecent', true);
-    return data
+    return data[0];
 }
 
 export async function numberOfRegionalShiniesFound() {

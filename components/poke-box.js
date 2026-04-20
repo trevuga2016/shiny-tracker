@@ -1,19 +1,25 @@
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import {Box, Grid, Skeleton} from "@mui/material";
 import DetailsModal from "./details-modal";
 import {typesMap} from "../app/db-client";
+import {useQuery} from "@tanstack/react-query";
 
 export default function PokeBox({pokemon}) {
     const [open, setOpen] = useState(false);
-    const [loading, setLoading] = useState(true);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
     const backgroundColor = pokemon?.hasShiny ? "lightgreen" : "#fff";
 
-    useEffect(() => {
-        pokemon && setLoading(false);
-    }, [pokemon]);
+    const { data: spriteUrl } = useQuery({
+        queryKey: ["sprite", pokemon],
+        queryFn: async () => {
+            const res = await fetch(pokemon.sprite);
+            const blob = await res.blob();
+            return URL.createObjectURL(blob);
+        },
+        enabled: !!pokemon
+    })
 
     return (
         <>
@@ -37,7 +43,7 @@ export default function PokeBox({pokemon}) {
              }}
         >
             {
-                loading ?
+                !pokemon ?
                     <Skeleton variant="rectangular" width="100%" height="100%" /> :
                     <>
                         <Grid justifyContent="center" textAlign="center" sx={{
@@ -109,7 +115,7 @@ export default function PokeBox({pokemon}) {
                                     lg: "75px"
                                 }
                             }}>
-                                <img loading="lazy" src={pokemon?.sprite} height="100%" width="100%" />
+                                <img loading="lazy" src={spriteUrl} height="100%" width="100%" />
                             </Box>
                         </Grid>
                     </>

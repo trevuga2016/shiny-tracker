@@ -1,58 +1,47 @@
 "use client"
 
 import {Grid, Skeleton} from "@mui/material";
-import {useEffect, useState} from "react";
 import {getAllRegions, getNumberOfRegionalShinies, getNumberOfSpeciesByRegion} from "../app/db-client";
+import {useQuery} from "@tanstack/react-query";
 
 export default function TotalsTable() {
-    const [data, setData] = useState(null);
-    const [totalShiniesFound, setTotalShiniesFound] = useState(0);
-    const [totalUniqueSpecies, setTotalUniqueSpecies] = useState(0);
 
-    const [totalPercentComplete, setTotalPercentComplete] = useState("");
-    const [loading, setLoading] = useState(true);
+    const { data, isLoading} = useQuery({
+        queryKey: ["regions-summary"],
+        queryFn: async () => {
+            const regions = await getAllRegions();
 
-    useEffect(() => {
-        let isMounted = true;
-
-        async function load() {
-            const data = await getAllRegions();
             let totalShiniesFound = 0;
             let totalUniqueSpecies = 0;
 
-            const regions = await Promise.all(
-                data?.map(async (region) => {
-                    const shiniesFound = await getNumberOfRegionalShinies(region?.name);
-                    const regionalSpecies = await getNumberOfSpeciesByRegion(region?.name);
-                    totalShiniesFound = totalShiniesFound + shiniesFound;
-                    totalUniqueSpecies = totalUniqueSpecies + regionalSpecies;
-                    let regionalPercentComplete = (shiniesFound / regionalSpecies) * 100;
+            const regionData = await Promise.all(
+                regions.map(async (region) => {
+                    const shiniesFound = await getNumberOfRegionalShinies(region.name);
+                    const regionalSpecies = await getNumberOfSpeciesByRegion(region.name);
+
+                    totalShiniesFound += shiniesFound;
+                    totalUniqueSpecies += regionalSpecies;
+
                     return {
-                        region: region?.name,
-                        shiniesFound: shiniesFound,
-                        regionalSpecies: regionalSpecies,
-                        regionalPercentComplete: regionalPercentComplete.toFixed(2)
+                        region: region.name,
+                        shiniesFound,
+                        regionalSpecies,
+                        regionalPercentComplete: ((shiniesFound / regionalSpecies) * 100).toFixed(2),
                     }
                 })
-            )
-            if (isMounted && data) {
-                setData(regions || null);
-                setTotalShiniesFound(totalShiniesFound);
-                setTotalUniqueSpecies(totalUniqueSpecies);
-                setTotalPercentComplete(((totalShiniesFound / totalUniqueSpecies) * 100).toFixed(4))
-                setLoading(false);
+            );
+
+            return {
+                regions: regionData,
+                totalShiniesFound,
+                totalUniqueSpecies,
+                totalPercentComplete: ((totalShiniesFound / totalUniqueSpecies) * 100).toFixed(2)
             }
-        }
-
-        load();
-
-        return () => {
-            isMounted = false;
-        };
-    }, []);
+        },
+    });
 
     return(
-        !loading ? (<Grid container direction="column" alignItems="center" pb={4}>
+        !isLoading ? (<Grid container direction="column" alignItems="center" pb={4}>
             <Grid container direction="column" border="2px solid black" sx={{ width: {xs: '95%', sm: '75%', md: '50%', lg: '35%'} }}>
                 <Grid container justifyContent="center" sx={{ borderBottom: '2px solid black'}} fontWeight="bold">
                     <Grid size={3} textAlign="center" padding="5px" alignContent="center">
@@ -69,7 +58,7 @@ export default function TotalsTable() {
                     </Grid>
                 </Grid>
                 {
-                    data?.map((regData , i) => {
+                    data?.regions?.map((regData , i) => {
                         return(
                             <Grid container justifyContent="center" key={i}>
                                 <Grid size={3} textAlign="center">
@@ -93,13 +82,13 @@ export default function TotalsTable() {
                         Totals
                     </Grid>
                     <Grid size={3} textAlign="center" borderLeft="2px solid black">
-                        {totalShiniesFound}
+                        {data?.totalShiniesFound}
                     </Grid>
                     <Grid size={3} textAlign="center" borderLeft="2px solid black">
-                        {totalUniqueSpecies}
+                        {data?.totalUniqueSpecies}
                     </Grid>
-                    <Grid size={3} textAlign="center" borderLeft="2px solid black" sx={{ background: `linear-gradient(to right, lightgreen ${totalPercentComplete}%, transparent ${totalPercentComplete}%)` }}>
-                        {totalPercentComplete}%
+                    <Grid size={3} textAlign="center" borderLeft="2px solid black" sx={{ background: `linear-gradient(to right, lightgreen ${data?.totalPercentComplete}%, transparent ${data?.totalPercentComplete}%)` }}>
+                        {data?.totalPercentComplete}%
                     </Grid>
                 </Grid>
             </Grid>

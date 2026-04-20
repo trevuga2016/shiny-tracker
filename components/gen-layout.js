@@ -3,26 +3,23 @@
 import PokeBox from "./poke-box";
 import {Grid} from "@mui/material";
 import {getAllPokemonByRegion, getAllRegionalForms} from "../app/db-client";
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
+import {useQuery} from "@tanstack/react-query";
+import {prefetchSprites} from "../lib/prefetchSprites";
 
 export default function GenerationLayout({ region }) {
 
-    const [data, setData] = useState(null);
+    const { data } = useQuery({
+        queryKey: ["generation-layout", region],
+        queryFn: async () => {
+            return region === "regional-variants" ? await getAllRegionalForms() : await getAllPokemonByRegion(region);
+        },
+        enabled: !!region
+    });
 
     useEffect(() => {
-        let isMounted = true;
-
-        async function load() {
-            const data = region === "regional-variants" ? await getAllRegionalForms() : await getAllPokemonByRegion(region);
-            if (isMounted && data) setData(data || null);
-        }
-
-        load();
-
-        return () => {
-            isMounted = false;
-        };
-    }, []);
+        prefetchSprites(region, data);
+    }, [region]);
 
     return(
         <Grid container spacing={2} justifyContent="center" pb={8}>

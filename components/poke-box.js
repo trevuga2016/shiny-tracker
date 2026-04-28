@@ -11,7 +11,7 @@ export default function PokeBox({pokemon}) {
 
     const backgroundColor = pokemon?.hasShiny ? "lightgreen" : "#fff";
 
-    const { data: spriteUrl } = useQuery({
+    const {data: spriteUrl} = useQuery({
         queryKey: ["sprite", pokemon],
         queryFn: async () => {
             const res = await fetch(pokemon.sprite);
@@ -23,28 +23,27 @@ export default function PokeBox({pokemon}) {
 
     return (
         <>
-        <Box onClick={handleOpen}
-            sx={{
-                 border: '1px solid black',
-                 width: {
-                     xs: '100px',
-                     sm: '125px',
-                     md: '125px',
-                     lg: '150px',
-                 },
-                 height: {
-                     xs: '100px',
-                     sm: '125px',
-                     md: '125px',
-                     lg: '150px',
-                 },
-                 backgroundColor: backgroundColor,
-                 cursor: "pointer"
-             }}
-        >
-            {
-                !pokemon ?
-                    <Skeleton variant="rectangular" width="100%" height="100%" /> :
+            <Box onClick={handleOpen}
+                 sx={{
+                     border: '1px solid black',
+                     width: {
+                         xs: '100px',
+                         sm: '125px',
+                         md: '125px',
+                         lg: '150px',
+                     },
+                     height: {
+                         xs: '100px',
+                         sm: '125px',
+                         md: '125px',
+                         lg: '150px',
+                     },
+                     backgroundColor: backgroundColor,
+                     cursor: "pointer"
+                 }}
+            >
+                {
+                    pokemon ?
                     <>
                         <Grid justifyContent="center" textAlign="center" sx={{
                             fontSize: {
@@ -75,7 +74,8 @@ export default function PokeBox({pokemon}) {
                         {
                             pokemon?.type2 ?
                                 <Grid display="flex" justifyContent="center">
-                                    <Box width="40px" display="flex" justifyContent="center" alignItems="center" gap="4px" sx={{
+                                    <Box width="40px" display="flex" justifyContent="center" alignItems="center"
+                                         gap="4px" sx={{
                                         width: {
                                             xs: "45px",
                                             sm: "55px",
@@ -83,8 +83,8 @@ export default function PokeBox({pokemon}) {
                                             lg: "60px"
                                         }
                                     }}>
-                                        <img loading="lazy" src={typesMap[pokemon?.type1]} />
-                                        <img loading="lazy" src={typesMap[pokemon?.type2]} />
+                                        <img loading="lazy" src={typesMap[pokemon?.type1]}/>
+                                        <img loading="lazy" src={typesMap[pokemon?.type2]}/>
                                     </Box>
                                 </Grid> :
                                 <Grid display="flex" justifyContent="center">
@@ -96,7 +96,7 @@ export default function PokeBox({pokemon}) {
                                             lg: "60px"
                                         }
                                     }}>
-                                        <img loading="lazy" src={typesMap[pokemon?.type1]} />
+                                        <img loading="lazy" src={typesMap[pokemon?.type1]}/>
                                     </Box>
                                 </Grid>
                         }
@@ -115,14 +115,14 @@ export default function PokeBox({pokemon}) {
                                     lg: "75px"
                                 }
                             }}>
-                                <img loading="lazy" src={spriteUrl} height="100%" width="100%" />
+                                <img loading="lazy" src={spriteUrl} height="100%" width="100%"/>
                             </Box>
                         </Grid>
-                    </>
-            }
-
-        </Box>
-        <DetailsModal open={open} onClose={handleClose} pokemon={pokemon} />
+                    </> :
+                    <>None</>
+                }
+            </Box>
+            <DetailsModal open={open} onClose={handleClose} pokemon={pokemon}/>
         </>
     )
 }

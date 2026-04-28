@@ -537,6 +537,13 @@ export default function HuntingMethods() {
                     <Typography className="text-subheading">All Games</Typography>
                     <Typography className="text-block">The purest form of finding a shiny: luck!</Typography>
                 </Grid>
+                {/* RNG Manipulation*/}
+                <Grid container direction="column" className="text-container">
+                    <Typography variant="h5">RNG Manipulation</Typography>
+                    <Typography className="text-subheading">Various Games</Typography>
+                    <Typography className="text-block">A complex form of shiny hunting, but early generation Pokémon games have somewhat predictable RNG that is used to generate shiny Pokémon.</Typography>
+                    <Typography className="text-block">A comprehensive guide can be found here: <a src="https://retailrng.com/">Retail Pokémon RNG</a></Typography>
+                </Grid>
                 {/* Sandwich Encounters */}
                 <Grid container direction="column" className="text-container">
                     <Typography variant="h5">Sandwich Encounters</Typography>

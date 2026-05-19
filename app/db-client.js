@@ -80,6 +80,14 @@ export async function totalNumberOfRegionalVariants() {
     return data.length
 }
 
+export async function updatePokemonById(id, updateData) {
+    const { data, error } = await supabase
+        .from('shiny_tracker')
+        .update(updateData)
+        .eq('_id', id);
+    return data?.status;
+}
+
 async function getPokemonSpeciesByRegion(region) {
     const { data, error } = await supabase
         .from('shiny_tracker')
